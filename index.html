@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>Family Game Music</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1> Family Game Music</h1>
+            <p>Random music stopper for games!</p>
+        </div>
+
+        <!-- Game Mode Selection -->
+        <div class="card">
+            <label> Game Mode Select Karo:</label>
+            <div class="game-modes">
+                <button class="mode-btn active musical-chairs" data-mode="musical-chairs">Musical Chairs</button>
+               
+              
+            </div>
+            <!--
+             <div class="game-modes">
+                <button class="mode-btn active musical-pillow" data-mode="musical-pillow"> Pillow Game</button>
+               
+            </div>
+            -->
+        </div>
+
+        <!-- Game Info -->
+        <div class="card game-info" id="gameInfo">
+            
+            <h2 id="gameTitle">🪑 Musical Chairs</h2>
+            <p id="gameRules">Sab log chairs ke paas nache! Jab music ruke toh sb baithne ke liye ek ghaar ka kami ek player bahar! 🎵</p>
+        </div>
+        <!--
+         <div class="card game-info" id="gameInfo">
+            <h2 id="gameTitle"> Pillow Game</h2>
+            <p id="gameRules"> Pillow ek ek karke pass karna jiske pass music band hoga usse koi kam karao </p>
+        </div>
+-->
+
+
+            <div>
+                <label>
+                    ⏱️ Maximum Time: <span class="range-value" id="maxDisplay">30</span>s
+                </label>
+                <input type="range" id="maxTime" min="5" max="120" value="30">
+                <small>Zyada der music bajne ka chance</small>
+            </div>
+        </div>
+
+        <!-- Music Input -->
+        <div class="card">
+            <label>🎧 Music URL (YouTube, Spotify, or direct link):</label>
+            <input type="text" id="musicUrl" value="https://cdn.truefilesize.com/mp3/sample-1mb.mp3">
+            <p>Apna favorite song ka link paste karo..</p>
+        </div>
+
+        <!-- Time Range Settings -->
+        <div class="card">
+            <div style="margin-bottom: 20px;">
+                <label>
+                    ⏱️ Minimum Time: <span class="range-value" id="minDisplay">5</span>s
+                </label>
+                <input type="range" id="minTime" min="1" max="30" value="5">
+                <small>Jaldi-jaldi stop hone ka chance</small>
+            </div>
+
+            <div>
+                <label>
+                    ⏱️ Maximum Time: <span class="range-value" id="maxDisplay">30</span>s
+                </label>
+                <input type="range" id="maxTime" min="5" max="120" value="30">
+                <small>Zyada der music bajne ka chance</small>
+            </div>
+        </div>
+        
+        <!-- Audio Player -->
+        <audio id="audioPlayer" crossOrigin="anonymous" controls></audio>
+
+        <!-- Play/Pause Controls -->
+        <div class="controls" id="controls">
+            
+            <button class="btn-play" id="playBtn" onclick="playMusic()"> SHURU KARO!</button>
+            
+            <button class="btn-stop" id="stopBtn" onclick="stopMusic()"> Khatam Karo</button>
+            
+            <button class="btn-pause hidden" id="pauseBtn" onclick="pauseMusic()">⏸️Pause</button>
+            <button class="btn-resume hidden" id="resumeBtn" onclick="resumeMusic()"> Resume</button>
+        </div>
+
+        <!-- Playing Indicator -->
+        <div class="playing-indicator hidden" id="playingIndicator">
+            🎵 Music Chal Raha Hai! Nao! 🎵
+        </div>
+
+        <!-- Round Stats -->
+        <div class="card stats" id="statsCard">
+            <h3>📊 Game Stats</h3>
+            <p class="stats-big" id="roundCount">Round #1 Complete! 🎉</p>
+            <div class="stats-detail">
+                <p>Average duration: <span id="avgDuration">0</span>s</p>
+                <p>Fastest round: <span id="fastestRound">0</span>s</p>
+                <p>Longest round: <span id="longestRound">0</span>s</p>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="tips">
+            <strong>💡 Tips:</strong><br/>
+            • WiFi se YouTube link use karo best quality ke liye .mp3 me hona chahiye<br/>
+            • Pehle practice round khelo settings test karne ke liye<br/>
+            • Har round ke baad manually resume karo<br/>
+            • Mobile pe landscape mode use karo!
+        </div>
+    </div>
+
+    <script src="script.js">script.js</script>
+</body>
+  </html>
